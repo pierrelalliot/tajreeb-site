@@ -33,7 +33,8 @@
     email: cfg.email,
     whatsapp: cfg.whatsapp ? "+" + cfg.whatsapp : "",
     legalEntity: cfg.legalEntity,
-    licenseNo: cfg.licenseNo
+    licenseNo: cfg.licenseNo,
+    legalLastUpdated: cfg.legalLastUpdated
   };
 
   document.querySelectorAll("[data-text]").forEach(function (el) {
