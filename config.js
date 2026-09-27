@@ -8,6 +8,8 @@ window.TAJREEB_CONFIG = {
 
   legalEntity: "",    // registered legal entity name
   licenseNo: "",      // trade license number
-  privacyUrl: "",     // e.g. "privacy.html"
-  termsUrl: ""        // e.g. "terms.html"
+  privacyUrl: "privacy.html",
+  termsUrl: "terms.html",
+
+  legalLastUpdated: "27 September 2026" // shown as "Last updated" on the legal pages
 };

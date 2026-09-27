@@ -687,6 +687,62 @@ h2 + .compare { margin-top: 40px; }
 
 .legal .sep { margin: 0 6px; }
 
+/* ---------- Legal pages ---------- */
+
+.legal-hero {
+  padding: clamp(56px, 8vw, 96px) 0 40px;
+  border-bottom: 1px solid var(--line);
+}
+
+.legal-hero h1 {
+  margin-top: 16px;
+  font-size: clamp(2.1rem, 4.6vw, 3.1rem);
+  max-width: 20ch;
+}
+
+.legal-updated {
+  margin-top: 16px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.legal-body {
+  padding: clamp(48px, 7vw, 80px) 0;
+  max-width: 42rem;
+}
+
+.legal-body h2 {
+  margin-top: 40px;
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+}
+
+.legal-body h2:first-child { margin-top: 0; }
+
+.legal-body p {
+  margin-top: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.legal-body p:first-child { margin-top: 0; }
+
+.legal-link {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 3px;
+}
+
+.legal-link:hover { color: var(--accent); }
+
+.legal-link.is-pending {
+  color: var(--muted);
+  text-decoration: none;
+  cursor: default;
+}
+
 /* ---------- Scroll reveal ---------- */
 /* Gated behind .js (set only if IntersectionObserver exists) so content
    is never hidden without a script able to reveal it, and behind
