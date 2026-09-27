@@ -141,19 +141,43 @@ a { color: inherit; }
 }
 
 .nav {
+  position: relative;
   display: flex;
-  gap: 28px;
+  align-items: center;
+  gap: 4px;
   margin-left: auto;
 }
 
 .nav a {
+  position: relative;
+  z-index: 1;
+  padding: 6px 12px;
   text-decoration: none;
   font-size: 0.94rem;
   color: var(--muted);
   transition: color 0.15s;
 }
 
-.nav a:hover { color: var(--ink); }
+.nav a:hover,
+.nav a:focus-visible { color: var(--ink); }
+
+.nav-highlight {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 0;
+  width: 0;
+  z-index: 0;
+  border-radius: 999px;
+  background: var(--accent);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.25s ease-out, width 0.25s ease-out, opacity 0.15s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-highlight { transition: none; }
+}
 
 @media (max-width: 760px) {
   .nav { display: none; }
@@ -662,3 +686,42 @@ h2 + .compare { margin-top: 40px; }
 .legal a:hover { color: var(--ink); }
 
 .legal .sep { margin: 0 6px; }
+
+/* ---------- Scroll reveal ---------- */
+/* Gated behind .js (set only if IntersectionObserver exists) so content
+   is never hidden without a script able to reveal it, and behind
+   no-preference so prefers-reduced-motion: reduce sees no hidden state. */
+
+@media (prefers-reduced-motion: no-preference) {
+  .js .section .wrap {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+
+  .js .section.is-visible .wrap {
+    opacity: 1;
+    transform: none;
+  }
+
+  .js .section .cards > *,
+  .js .section .pills > *,
+  .js .section .stats > *,
+  .js .section .channels > *,
+  .js .section .compare > *,
+  .js .section .sectors > * {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+  }
+
+  .js .section.is-visible .cards > *,
+  .js .section.is-visible .pills > *,
+  .js .section.is-visible .stats > *,
+  .js .section.is-visible .channels > *,
+  .js .section.is-visible .compare > *,
+  .js .section.is-visible .sectors > * {
+    opacity: 1;
+    transform: none;
+  }
+}
