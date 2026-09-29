@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>if ('IntersectionObserver' in window) { document.documentElement.classList.add('js'); }</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Case Study: From 4 to 40 Experiments · Tajreeb</title>
+  <meta name="description" content="How an anonymized experimentation program moved from 4 to roughly 40 tests a year by embedding testing into Product itself.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#F5F1E8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15181A" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="mark" viewBox="0 0 160 160" fill="none">
+      <path d="M64,20 L64,46 L20,140" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M96,20 L96,46 L140,140" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M46,130 C70,130 78,100 100,100" stroke="var(--accent)" stroke-width="11" stroke-linecap="round"/>
+    </symbol>
+  </svg>
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="Tajreeb, back to homepage">
+        <svg class="brand-mark" aria-hidden="true"><use href="#mark"/></svg>
+        <span class="wordmark">tajreeb</span>
+      </a>
+      <a class="btn btn-ghost btn-small" href="index.html">← Back to site</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="legal-hero">
+      <div class="wrap">
+        <p class="eyebrow">Case study · Build</p>
+        <h1>From 4 to 40 Experiments: Building a Program Product Teams Actually Owned</h1>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="legal-body">
+        <h2>Executive Summary</h2>
+        <p>An established experimentation program had the methodology, tooling, and theoretical foundations in place, but only four A/B tests had launched in a full year. The challenge was no longer teaching the organization what experimentation was. It was turning experimentation into a practical Product capability.</p>
+        <p>By embedding experimentation into Product workflows, introducing a research-led testing process, and giving Product teams ownership of the ideas, the program grew from <strong>4 tests in 2024 to 20 tests in the first six months of 2025</strong>, with the resulting backlog enabling approximately <strong>40 tests across the full year</strong>. Ownership shifted alongside the volume: Product teams went from needing to be convinced to test, to actively supplying experiment ideas themselves.</p>
+
+        <h2>The Starting Point: Rigor Without Momentum</h2>
+        <p>The organization had already invested in experimentation. For roughly 18 months, an external coach had trained the team on A/B testing methodology: formulating hypotheses, analyzing experiments, selecting tests, and applying statistical rigor.</p>
+        <p>Rigor had become a constraint rather than an enabler. Despite having the platform and methodology in place, the team ran only <strong>four tests in 2024</strong>, and the program risked fading once the coach's engagement ended. The team had the theoretical knowledge already; what was missing was execution. Experimentation had settled into a specialist activity that sat alongside Product, rather than something integrated into how Product teams made decisions.</p>
+
+        <h3>The Business Risk</h3>
+        <p>Without a healthy experimentation pipeline, Product decisions kept relying on assumptions about what would improve the customer experience and conversion. The organization needed to move from confidence in <em>how</em> to run an experiment to consistency in identifying <em>what</em> was worth experimenting on. That meant connecting experimentation to Product strategy, research, and the existing development process.</p>
+
+        <h2>The 0-to-1 Implementation</h2>
+
+        <h3>Turning Analysis Into an Experimentation Engine</h3>
+        <p>Joining initially as a Web Analyst, with responsibility for analyzing the website and identifying opportunities, the first step wasn't rebuilding the experimentation platform; the underlying tracking was already robust and usable. The focus instead was building a systematic pipeline from insight to hypothesis to experiment to learning.</p>
+        <p>One of the first initiatives was a feature audit covering the major components of the digital experience: search, recommendation engines, product images, quick views, CTAs, and other tracked features. Each was assessed against its usage and relationship to both macro-conversions (purchases) and micro-conversions (steps that move users toward the next stage). This produced a prioritization matrix identifying the strongest experimentation opportunities, and the audit was repeated the following year to track how feature performance had shifted.</p>
+
+        <h3>Standardizing the Experimentation Process</h3>
+        <p>Two core templates made experimentation repeatable:</p>
+        <ul>
+          <li><strong>Experiment brief:</strong> the research supporting the test, hypothesis structure, KPIs, and rationale.</li>
+          <li><strong>Results deck:</strong> a consistent format for outcomes, segmentation, insights, and statistical interpretation.</li>
+        </ul>
+        <p>The goal was building a process for confidently identifying winners, losers, and inconclusive results, and learning from all three, not just chasing wins. An insight repository centralized findings from analytics, surveys, and prior A/B tests, which helped prevent what's best described as "spaghetti testing": launching experiments because an idea sounded interesting, without research or evidence behind it.</p>
+
+        <h3>Making Experimentation Part of Product</h3>
+        <p>The biggest change was organizational. Experimentation stopped being a separate analytical activity and became part of the Product team's own work. Work happened directly with Product stakeholders to build the experimentation backlog, and workshops aligned on strategy and defended the program's direction. The relationship evolved from pitching individual tests to Product Owners, to helping them develop and structure their own testing ideas.</p>
+
+        <h2>Measured Results and ROI</h2>
+        <ul>
+          <li><strong>4 tests in 2024</strong> to <strong>20 tests in the first 6 months of 2025</strong></li>
+          <li>The resulting backlog enabled approximately <strong>40 tests across the full year</strong></li>
+          <li><strong>10x annual test volume</strong>, from 4 to approximately 40 experiments</li>
+          <li>Approximately half of experiments were reported as winners, though a consolidated conversion or revenue uplift wasn't available across markets and brands</li>
+          <li>The organization operated across multiple brands and countries, so individual experiment impacts were distributed across markets rather than captured as one consolidated uplift</li>
+          <li>A structured research → hypothesis → test → analysis → insight workflow replaced isolated test ideas</li>
+        </ul>
+        <p>The test count mattered less than what drove it.</p>
+
+        <h3>Product Ownership Became the Leading Indicator</h3>
+        <p>Early on, Product Owners had to be convinced to run experiments. Over time, the dynamic reversed: the conversation moved from "what should we test?" to "which of your ideas should we prioritize, and how do we turn them into strong experiments?" That shift built a more sustainable model, one that didn't depend on an analyst continuously pushing tests into the Product roadmap.</p>
+
+        <h2>The Turning Point</h2>
+        <p>One of the clearest signals of adoption: the Head of Product began actively asking for input on experimentation strategy, which tests to run, and how to make the program work better within Product. At the same time, Product Owners evolved from reluctant recipients of experimentation proposals into a source of experiment ideas themselves.</p>
+        <blockquote><p>The goal wasn't to make Product run tests. It was to make experimentation part of how Product thought.</p></blockquote>
+        <p>The program started with a team that knew the theory but was running four tests a year. Six months later, it had launched twenty.</p>
+
+        <h3>Strategic Takeaway</h3>
+        <p>Scaling experimentation doesn't always require a new platform or a larger analytics team. Sometimes the real constraint is organizational: the capability exists, but it sits too far from the people making Product decisions. Here, the breakthrough came from turning experimentation from a specialist service into a shared Product capability, supported by CRO expertise and increasingly powered by Product teams themselves.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <a class="brand brand-small" href="index.html" aria-label="Tajreeb, back to homepage">
+        <svg class="brand-mark" aria-hidden="true"><use href="#mark"/></svg>
+        <span class="wordmark">tajreeb</span>
+      </a>
+      <p class="legal">
+        © 2026 Tajreeb <span data-text="legalEntity">[Legal entity pending]</span>
+        <span class="sep">·</span> License no. <span data-text="licenseNo">[pending]</span>
+        <span class="sep">·</span> <a href="privacy.html" data-link="privacy">Privacy</a>
+        <span class="sep">·</span> <a href="terms.html" data-link="terms">Terms</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="main.js"></script>
+  <script src="motion.js"></script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
