@@ -10,6 +10,7 @@ Site for Tajreeb, an experimentation consultancy in Dubai. Plain HTML, CSS, and 
 - `config.js` — contact details and legal fields still pending (email, WhatsApp, booking link, LinkedIn, legal entity, license number, legal pages' last-updated date)
 - `main.js` — applies `config.js` values to the page
 - `motion.js` — stats counter, scroll reveal, sliding nav highlight (progressive enhancement, see file for details)
+- `assets/video/`: "What we do" pillar loops (light and dark MP4s plus poster JPGs), driven by the tabs script at the end of `motion.js`. Their background is color-matched to the page, so don't re-encode or recolor them
 - `favicon.svg` — logo mark
 
 ## Updating pending details

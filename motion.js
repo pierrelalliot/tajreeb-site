@@ -99,3 +99,74 @@
     window.addEventListener('resize', function () { moveHighlight(null); });
   }
 })();
+
+/* ---------- What we do: pillar tabs and videos ---------- */
+/* Independent of the IntersectionObserver gate above: the tabs must work
+   everywhere. Only the active panel's video loads and plays; the others stay
+   paused with preload="none". The -light/-dark files follow the system theme,
+   and prefers-reduced-motion gets the matching poster as a still instead. */
+
+(function () {
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.pillar-tabs [role="tab"]'));
+  if (!tabs.length) return;
+
+  var DIR = 'assets/video/';
+  var dark = window.matchMedia('(prefers-color-scheme: dark)');
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  function load(video) {
+    var file = DIR + video.getAttribute('data-name') + '-' + (dark.matches ? 'dark' : 'light');
+    if (still.matches) {
+      if (video.getAttribute('src')) {
+        video.removeAttribute('src');
+        video.load();
+      }
+      video.poster = file + '-poster.jpg';
+    } else if (video.getAttribute('src') !== file + '.mp4') {
+      // loops start on an empty frame, so no poster is needed while playing
+      video.removeAttribute('poster');
+      video.src = file + '.mp4';
+    }
+  }
+
+  function select(active) {
+    tabs.forEach(function (tab) {
+      var on = tab === active;
+      var panel = document.getElementById(tab.getAttribute('aria-controls'));
+      var video = panel.querySelector('video');
+      tab.setAttribute('aria-selected', on ? 'true' : 'false');
+      tab.tabIndex = on ? 0 : -1;
+      panel.hidden = !on;
+      if (!on) {
+        video.pause();
+        return;
+      }
+      load(video);
+      if (!still.matches) {
+        video.currentTime = 0;
+        var playing = video.play();
+        if (playing) playing.catch(function () {});
+      }
+    });
+  }
+
+  function current() {
+    return tabs.filter(function (tab) { return tab.getAttribute('aria-selected') === 'true'; })[0] || tabs[0];
+  }
+
+  tabs.forEach(function (tab, i) {
+    tab.addEventListener('click', function () { select(tab); });
+    tab.addEventListener('keydown', function (e) {
+      var step = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (!step) return;
+      e.preventDefault();
+      var next = tabs[(i + step + tabs.length) % tabs.length];
+      next.focus();
+      select(next);
+    });
+  });
+
+  dark.addEventListener('change', function () { select(current()); });
+  still.addEventListener('change', function () { select(current()); });
+  select(tabs[0]);
+})();
