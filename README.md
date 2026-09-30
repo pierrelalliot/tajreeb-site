@@ -22,7 +22,7 @@ Edit `config.js`. Empty values stay marked as pending on the page; filled values
 
 ## Analytics
 
-Page-view analytics via Vercel Web Analytics (`/_vercel/insights/script.js`, included on every page). It's cookieless and only reports page views, device/browser type, approximate location, and referral source — matching what `privacy.html` describes. **Enable "Web Analytics" in the Vercel project dashboard** for the script to report anything; without that toggle the script tag is a harmless no-op.
+Page-view analytics via Vercel Web Analytics (`https://cdn.vercel-insights.com/v1/script.js`, included on every page). It's cookieless and only reports page views, device/browser type, approximate location, and referral source — matching what `privacy.html` describes. **Enable "Web Analytics" in the Vercel project dashboard** for the script to report anything; without that toggle the script tag is a harmless no-op.
 
 ## Local preview
 
