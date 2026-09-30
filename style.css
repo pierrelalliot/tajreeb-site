@@ -433,6 +433,51 @@ h2 + .compare { margin-top: 40px; }
   color: var(--muted);
 }
 
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.testimonial blockquote {
+  margin: 0;
+}
+
+.testimonial blockquote::before {
+  content: "\201C";
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  line-height: 1;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.testimonial blockquote p {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.testimonial figcaption {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.testimonial-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+.testimonial-title {
+  margin-top: 2px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
 .case-study {
   margin-top: 20px;
   padding-top: 20px;
