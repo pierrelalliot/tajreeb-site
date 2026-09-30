@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>if ('IntersectionObserver' in window) { document.documentElement.classList.add('js'); }</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Case Study: Decentralizing Experimentation to Scale Across Product · Tajreeb</title>
+  <meta name="description" content="How an anonymized five-year-old centralized experimentation program scaled by moving ownership into Product itself.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#F5F1E8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15181A" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="mark" viewBox="0 0 160 160" fill="none">
+      <path d="M64,20 L64,46 L20,140" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M96,20 L96,46 L140,140" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M46,130 C70,130 78,100 100,100" stroke="var(--accent)" stroke-width="11" stroke-linecap="round"/>
+    </symbol>
+  </svg>
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="Tajreeb, back to homepage">
+        <svg class="brand-mark" aria-hidden="true"><use href="#mark"/></svg>
+        <span class="wordmark">tajreeb</span>
+      </a>
+      <a class="btn btn-ghost btn-small" href="index.html">← Back to site</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="legal-hero">
+      <div class="wrap">
+        <p class="eyebrow">Case study · Scale</p>
+        <h1>Decentralizing Experimentation to Scale Across Product</h1>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="legal-body">
+        <h2>Executive Summary</h2>
+        <p>An organization had run experimentation for five years through a centralized Data/CRO team, reaching roughly 50 tests in its strongest year. The model was technically capable, but Product teams felt tests were imposed rather than owned, and the relationship between the two functions had reached an impasse. Rather than pushing for more tests from the center, the shift moved experimentation ownership into Product itself, with the CRO function becoming an enabler rather than a gatekeeper. The result was not a higher test count. It was a fundamentally different organization: one where Product teams generated and owned their own experimentation.</p>
+
+        <h2>The Bottleneck (Before)</h2>
+
+        <h3>Centralized Friction</h3>
+        <p>For five years, a Data/CRO team ran experimentation centrally, building real capability along the way and reaching approximately 50 tests in its record year. But the relationship with Product had deteriorated. Tests were sometimes seen as challenges to decisions Product had already made. Experiments weren't always aligned with the roadmap. Product Managers were occasionally shown results for initiatives they hadn't shaped, and even a clear, useful result could be hard to implement if it didn't fit the broader product strategy already in motion.</p>
+
+        <h3>Impact on Speed and Adoption</h3>
+        <p>The constraint wasn't test-production capacity. The centralized team could already produce tests at volume. The real limitation was distance: experimentation sat apart from where product decisions actually got made, so its output rarely translated into adoption. A test could be statistically sound and still go nowhere.</p>
+
+        <h2>The Scaling Framework (Execution)</h2>
+
+        <h3>Governance and Enablement</h3>
+        <p>The organization restructured the experimentation capability to sit closer to Product. Rather than handing Product a testing roadmap, the approach reversed the relationship: the roadmap stayed in Product's hands, and the CRO function's role became helping Product turn its own priorities into experiments. This took real relationship-building. Work happened directly with the three Product Managers, each owning a distinct scope, through their existing rituals: release planning, trimester roadmap prep, and the everyday conversations where testable opportunities naturally surface. A half-day experimentation masterclass covered the fundamentals of A/B testing and its role in product decisions, but training wasn't the main lever.</p>
+
+        <h3>Operating Model</h3>
+        <p>The bigger shift was ownership. Product teams stopped accommodating externally designed tests and started generating their own, with the CRO function supporting execution rather than dictating it. Over time, a simple habit took hold: any mention of an "A/B test" in a Product conversation drew immediate engagement, until teams were joking about how predictably that attention arrived. The goal was repetition and normalization, not a one-time training event. Experimentation spread across roughly seven Product squads, and for the first time meaningfully reached the app, where prior activity had been close to zero across the preceding five years.</p>
+
+        <h3>AI Experimentation as an Accelerator</h3>
+        <p>A roughly one-hour workshop let the Product team experiment hands-on with AI-generated test variations. The organization wasn't ready to operationalize this as a long-term workflow, but the session had a real effect: it showed Product stakeholders how much they could produce themselves in a short window, reinforcing the broader point that experimentation didn't have to stay the exclusive domain of CRO specialists.</p>
+
+        <h2>Measured Results and Velocity (After)</h2>
+        <ul>
+          <li>Q1: approximately 7–8 tests</li>
+          <li>Q2: approximately 12 tests</li>
+          <li>Q3: approximately 6 tests, affected by the summer slowdown</li>
+          <li>Roughly seven Product squads now running experiments (figure to be validated before external use)</li>
+          <li>Approximately five app experiments, up from close to zero in the previous five years</li>
+          <li>Prior centralized record: approximately 50 tests in its strongest year</li>
+        </ul>
+        <p>Overall raw velocity during the transition period didn't exceed the previous record year; it landed closer to a typical year than the peak one. What changed was where experimentation happened, who owned it, and how deeply it was embedded in Product's own process. Coverage broadened, app experimentation began in earnest, and ownership shifted from something Product accommodated to something Product actively generated.</p>
+
+        <h2>Key Moment and Strategic Takeaway</h2>
+        <p>The clearest evidence of the shift came between Q1 and Q2. In Q1, Product Managers had few experimentation ideas of their own. By Q2, the situation had reversed entirely: there were more proposed experiments than available resources could support, and the work became filtering ideas down rather than sourcing them.</p>
+        <blockquote><p>Your roadmap is in your hands. I'm not here to impose tests on you. I'm here to help you get the experiments out.</p></blockquote>
+        <p>Scaling experimentation here wasn't about building a larger centralized testing operation. It was about changing who owned it. The CRO function became an enablement layer, supporting Product teams in testing within their own strategic priorities rather than working around a separate team's agenda.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <a class="brand brand-small" href="index.html" aria-label="Tajreeb, back to homepage">
+        <svg class="brand-mark" aria-hidden="true"><use href="#mark"/></svg>
+        <span class="wordmark">tajreeb</span>
+      </a>
+      <p class="legal">
+        © 2026 Tajreeb <span data-text="legalEntity">[Legal entity pending]</span>
+        <span class="sep">·</span> License no. <span data-text="licenseNo">[pending]</span>
+        <span class="sep">·</span> <a href="privacy.html" data-link="privacy">Privacy</a>
+        <span class="sep">·</span> <a href="terms.html" data-link="terms">Terms</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="main.js"></script>
+  <script src="motion.js"></script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
