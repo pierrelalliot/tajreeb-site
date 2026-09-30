@@ -104,7 +104,8 @@
 /* Independent of the IntersectionObserver gate above: the tabs must work
    everywhere. Only the active panel's video loads and plays; the others stay
    paused with preload="none". The -light/-dark files follow the system theme,
-   and prefers-reduced-motion gets the matching poster as a still instead. */
+   and prefers-reduced-motion gets the matching poster as a still instead, as
+   does a video whose playback is blocked (e.g. iOS Low Power Mode). */
 
 (function () {
   var tabs = Array.prototype.slice.call(document.querySelectorAll('.pillar-tabs [role="tab"]'));
@@ -114,8 +115,12 @@
   var dark = window.matchMedia('(prefers-color-scheme: dark)');
   var still = window.matchMedia('(prefers-reduced-motion: reduce)');
 
+  function base(video) {
+    return DIR + video.getAttribute('data-name') + '-' + (dark.matches ? 'dark' : 'light');
+  }
+
   function load(video) {
-    var file = DIR + video.getAttribute('data-name') + '-' + (dark.matches ? 'dark' : 'light');
+    var file = base(video);
     if (still.matches) {
       if (video.getAttribute('src')) {
         video.removeAttribute('src');
@@ -145,7 +150,12 @@
       if (!still.matches) {
         video.currentTime = 0;
         var playing = video.play();
-        if (playing) playing.catch(function () {});
+        if (playing) playing.catch(function (err) {
+          // AbortError only means a tab or theme switch interrupted play()
+          if (err && err.name === 'AbortError') return;
+          // blocked: show the finished still for the current theme, not an empty frame
+          video.poster = base(video) + '-poster.jpg';
+        });
       }
     });
   }
